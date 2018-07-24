@@ -1,5 +1,8 @@
 package com.codecool.singletonDojo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PrinterManager {
 
     // TASKS:
@@ -12,8 +15,11 @@ public class PrinterManager {
     // Write some code that tests all functionality!
 
     public static void main(String[] args) {
+        List<Printer> printerList = new ArrayList<>();
+
         for (int i = 0; i < 15; i++) {
-            Printer printer = Printer.getInstance();
+            Printer printer = Printer.getInstance(10);
+            printerList.add(printer);
             printer.print("Something to print.");
         }
     }
